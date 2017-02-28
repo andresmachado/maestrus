@@ -19,5 +19,5 @@ def login(request, template_name='core/main.html'):
 
 def complete_auth(request):
     mhash, data = _encode_data({'email': request.user.email})
-    redir_url = request.session.get('requester') + "/ead/auth/"
-    return custom_redirect(redir_url, h=mhash, d=data)
+    REDIR_URL = "https://treinamento.maestrus.com/ead/auth/"
+    return custom_redirect(REDIR_URL, h=mhash, d=data)
